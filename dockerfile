@@ -138,10 +138,6 @@ RUN composer install --no-interaction --no-plugins --no-scripts
 RUN npm install
 RUN npm run build
 
-RUN printenv | grep APP_KEY > .env
-# Generate Laravel key
-RUN php artisan key:generate
-
 # Clear config cache
 RUN php artisan config:clear
 
