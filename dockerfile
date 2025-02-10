@@ -142,8 +142,6 @@ RUN printenv | grep APP_KEY > .env
 # Generate Laravel key
 RUN php artisan key:generate
 
-RUN rm .env
-
 # Clear config cache
 RUN php artisan config:clear
 
