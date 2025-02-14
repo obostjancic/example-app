@@ -134,6 +134,8 @@ RUN mkdir -p /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/d
 # Install Composer dependencies
 RUN composer install --no-interaction --no-plugins --no-scripts
 
+RUN php artisan migrate --force
+
 # Install NPM dependencies and build frontend
 RUN npm install
 RUN npm run build
